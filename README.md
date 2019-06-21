@@ -1,5 +1,7 @@
 # songe-unconverter
-*Convert Beat Saber Custom Songs to the OLD format*
+***Convert Beat Saber Custom Songs to the OLD format***
+
+*Want to go the other way (from OLD to NEW format) around?* Use [this](https://github.com/lolPants/songe-converter) tool from lolpants.
 
 ## Usage
 Drag one or multiple folders containing a beatmap's `info.json` file onto the binary.
