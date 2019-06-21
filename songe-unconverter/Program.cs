@@ -92,8 +92,11 @@ namespace songe_unconverter
                     File.Delete(Path.Combine(folderPath, diffJson.FileName.Replace(".json", ".dat")));
                 }
 
-                File.Copy(Path.Combine(folderPath, infoDat._songFilename), Path.Combine(folderPath, infoDat._songFilename.Replace(".egg", ".ogg")), true);
-                File.Delete(Path.Combine(folderPath, infoDat._songFilename));
+                if (infoDat._songFilename.Contains(".egg"))
+                {
+                    File.Copy(Path.Combine(folderPath, infoDat._songFilename), Path.Combine(folderPath, infoDat._songFilename.Replace(".egg", ".ogg")), true);
+                    File.Delete(Path.Combine(folderPath, infoDat._songFilename));
+                }
             }
         }
 

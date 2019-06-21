@@ -23,17 +23,20 @@ namespace songe_unconverter.Classes
                 previewDuration = infoDat._previewDuration,
                 coverImagePath = infoDat._coverImageFilename,
                 environmentName = infoDat._environmentName,
-                customEnvironment = infoDat._customData._customEnvironment,
-                customEnvironmentHash = infoDat._customData._customEnvironmentHash
+                customEnvironment = infoDat._customData?._customEnvironment ?? "",
+                customEnvironmentHash = infoDat._customData?._customEnvironmentHash ?? ""
             };
-            foreach (var contrib in infoDat._customData._contributors) // Contributors
+            if (infoDat._customData != null)
             {
-                info.contributors.Add(new InfoJson.Contributor
+                foreach (var contrib in infoDat._customData._contributors) // Contributors
                 {
-                    role = contrib._role,
-                    name = contrib._name,
-                    iconPath = contrib._iconPath
-                });
+                    info.contributors.Add(new InfoJson.Contributor
+                    {
+                        role = contrib._role,
+                        name = contrib._name,
+                        iconPath = contrib._iconPath
+                    });
+                }
             }
 
             foreach (var set in infoDat._difficultyBeatmapSets) // Difficulty Sets
@@ -46,10 +49,10 @@ namespace songe_unconverter.Classes
                         difficultyRank = ConvertDifficultyRank(diff._difficultyRank),
                         audioPath = infoDat._songFilename.Replace(".egg", ".ogg"),
                         jsonPath = diff._beatmapFilename.Replace(".dat",".json"),
-                        offset = diff._customData._editorOffset,
-                        oldOffset = diff._customData._editorOldOffset,
+                        offset = diff._customData?._editorOffset ?? 0,
+                        oldOffset = diff._customData?._editorOldOffset ?? 0,
                         characteristic = GetNewCharacteristic(set._beatmapCharacteristicName),
-                        difficultyLabel = diff._customData._difficultyLabel
+                        difficultyLabel = diff._customData?._difficultyLabel ?? ""
                     };
                     info.difficultyLevels.Add(diffLevel);
 
@@ -70,10 +73,10 @@ namespace songe_unconverter.Classes
                 _noteJumpStartBeatOffset = diffBeatmap._noteJumpStartBeatOffset,
                 _shuffle = infoDat._shuffle,
                 _shufflePeriod = infoDat._shufflePeriod,
-                _warnings = diffBeatmap._customData._warnings,
-                _information = diffBeatmap._customData._information,
-                _suggestions = diffBeatmap._customData._suggestions,
-                _requirements = diffBeatmap._customData._requirements,
+                _warnings = diffBeatmap._customData?._warnings,
+                _information = diffBeatmap._customData?._information,
+                _suggestions = diffBeatmap._customData?._suggestions,
+                _requirements = diffBeatmap._customData?._requirements,
                 _events = diffDat._events,
                 _notes = diffDat._notes,
                 _obstacles = diffDat._obstacles,
