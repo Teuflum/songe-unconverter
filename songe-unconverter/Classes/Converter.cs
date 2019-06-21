@@ -91,6 +91,10 @@ namespace songe_unconverter.Classes
                    return "No Arrows";
                 case "OneSaber":
                     return "One Saber";
+                case "Lightshow":
+                    return "Lightshow";
+                case "Lawless":
+                    return "Lawless";
                 case "Standard":
                 default:
                     return "Standard";
