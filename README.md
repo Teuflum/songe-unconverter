@@ -18,4 +18,4 @@ Since v0.2.0, it should also work for converting files from the official level e
 ## License
 This project is licensed under the MIT License. View the license file for more info.
 
-There are also several third-party libraries included, see [ThirdPartyNotices.txt](https://github.com/Teuflum/songe-unconverter/blob/master/ThirdPartyNotcies.txt) for more info on that.
+There are also several third-party libraries included, see [ThirdPartyNotices.txt](https://github.com/Teuflum/songe-unconverter/blob/master/ThirdPartyNotices.txt) for more info on that.
