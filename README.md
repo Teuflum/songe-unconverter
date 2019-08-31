@@ -1,3 +1,8 @@
+# THIS TOOL IS OBSOLETE NOW, USE SIMPLE-CONVERTER WHICH YOU CAN DOWNLOAD [HERE](https://github.com/lolPants/songe-converter)
+<br>
+<br>
+
+Original README:
 # songe-unconverter
 ***Convert Beat Saber Custom Songs to the OLD format***
 
